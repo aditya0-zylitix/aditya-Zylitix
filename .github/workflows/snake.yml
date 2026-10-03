@@ -17,11 +17,11 @@ jobs:
     steps:
       - name: Build snake SVGs
         uses: Platane/snk@v3
-        id: snake-gif
+        id: snake
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/snake.svg?palette=github-dark&color_snake=#00C6FF
+            dist/snake.svg?palette=github-dark
             dist/snake-light.svg?palette=github-light
 
       - name: Push to the output branch

@@ -2,7 +2,6 @@ name: GitHub-Profile-3D-Contrib
 
 on:
   schedule:
-    # every day at 18:30 UTC (= 00:00 IST)
     - cron: "30 18 * * *"
   workflow_dispatch:
   push:
@@ -23,11 +22,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-        with:
-          # renders into ./profile-3d-contrib/
-          settings_json: ""
 
-      - name: Commit & push rendered SVGs
+      - name: Commit and push rendered SVGs
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
